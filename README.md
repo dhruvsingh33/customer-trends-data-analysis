@@ -1,119 +1,144 @@
-# 👨🏻‍💻 Customer Behavior Data Analytics Project (Python · SQL · Power BI)
+# 👨🏻‍💻 Customer Behavior Data Analytics Project  
+**Python · SQL · Power BI**
 
-This project demonstrates a **complete, end-to-end data analytics workflow** designed to replicate how data analysts operate in real business environments.  
-It covers the full lifecycle of analytics — from raw data preparation to structured analysis, visualization, and business insight generation.
-
-The objective is to showcase **practical data analysis skills** across **Python, SQL, and Power BI**, with a strong focus on decision-oriented insights.
+This project demonstrates a **complete, industry-style end-to-end data analytics workflow** focused on understanding customer shopping behavior and converting raw transactional data into **actionable business insights**.  
+The analysis mirrors real-world responsibilities of Data Analysts working with cross-functional business teams.
 
 ---
 
-## 🎯 Project Objective
-The goal of this project is to analyze customer shopping behavior and generate actionable business insights by:
+## 📌 Business Context
+A retail organization is experiencing shifts in customer purchasing patterns across **demographics, product categories, and shopping behaviors**.  
+The leadership team wants to leverage customer data to improve:
 
-- Cleaning and preparing raw customer data
-- Performing exploratory analysis to understand patterns and trends
-- Using SQL to answer structured business questions
-- Building an interactive Power BI dashboard for stakeholder reporting
+- Sales performance  
+- Customer engagement & loyalty  
+- Marketing and product strategies  
 
-This project simulates a **real-world analytics use case** commonly handled by Data Analysts and Business Analysts.
+**Core Business Question:**  
+> *How can consumer shopping data be used to identify trends, improve customer engagement, and optimize marketing and product decisions?* :contentReference[oaicite:1]{index=1}
 
 ---
 
 ## 📸 Dashboard Preview
 
 ### 🔹 Overall Customer Behavior Dashboard
-![Dashboard Overview](screenshots/dashboard_overview.png)
+![Dashboard Overview](https://github.com/dhruvsingh33/customer-trends-data-analysis/blob/main/img/img1.png)
 
 ---
 
 ### 🔹 Subscription Status Analysis
-![Subscription Status](screenshots/subscription_status.png)
+![Subscription Status](https://github.com/dhruvsingh33/customer-trends-data-analysis/blob/main/img/img2.png)
 
 **Insight:**  
-A relatively small portion of customers are subscribed, indicating potential opportunities for subscription growth strategies.
+Only a minority of customers are subscribed, indicating a strong opportunity to increase adoption through targeted incentives.
 
 ---
 
-### 🔹 Revenue & Sales by Product Category
-![Category Analysis](screenshots/category_analysis.png)
+### 🔹 Revenue & Sales by Category
+![Category Analysis](https://github.com/dhruvsingh33/customer-trends-data-analysis/blob/main/img/img3.png)
 
 **Insight:**  
-Certain product categories consistently outperform others in both revenue and sales volume.
+A small number of product categories account for a disproportionate share of total revenue and sales volume.
 
 ---
 
 ### 🔹 Customer Segmentation by Age Group
-![Age Group Analysis](screenshots/age_group_analysis.png)
+![Age Group Analysis](https://github.com/dhruvsingh33/customer-trends-data-analysis/blob/main/img/img4.png)
+
+**Insight:**  
+Young adult and middle-aged customers generate the highest revenue contribution.
 
 ---
 
-## 🧠 Business Questions Addressed
-- How many customers are active and how much do they spend on average?
-- What percentage of customers are subscribed?
-- Which product categories drive the highest revenue and sales volume?
-- How does customer behavior differ across age groups?
-- Which customer segments contribute the most business value?
+## 🎯 Project Objectives
+- Clean and prepare raw customer data for analysis  
+- Identify key customer segments and purchasing drivers  
+- Analyze the impact of discounts, subscriptions, shipping types, and demographics  
+- Build an interactive dashboard to support data-driven decision-making  
 
 ---
 
 ## 🛠️ Tech Stack
-- **Python** – Data cleaning, transformation, and exploratory data analysis (EDA)
-- **SQL** – Business-driven queries and customer segmentation analysis
-- **Power BI Desktop** – Data modeling, visualization, and dashboard creation
-- **CSV Dataset** – Raw customer shopping behavior data
+- **Python** – Data cleaning, transformation, and exploratory data analysis (EDA)  
+- **SQL (PostgreSQL)** – Structured business analysis and customer segmentation  
+- **Power BI Desktop** – Data modeling, KPI tracking, and interactive dashboards  
+- **CSV Dataset** – Retail customer shopping behavior data  
 
 ---
 
-## 📊 Analytics Workflow
+## 📊 Dataset Overview
+- **Records:** ~3,900 customer transactions  
+- **Columns:** 18 features  
+- **Key Attributes:**
+  - Customer demographics (Age, Gender, Location, Subscription Status)
+  - Purchase details (Category, Item Purchased, Purchase Amount, Season)
+  - Shopping behavior (Discount Applied, Shipping Type, Review Rating, Purchase Frequency)
 
-1. **Data Preparation & EDA (Python)**
-   - Import raw customer data
-   - Handle missing values and data inconsistencies
-   - Perform exploratory analysis to understand distributions and trends
-
-2. **Data Analysis (SQL)**
-   - Load cleaned data into a relational database
-   - Write SQL queries to answer business-focused questions
-   - Analyze customer segments, purchase behavior, and revenue contribution
-
-3. **Visualization & Reporting (Power BI)**
-   - Connect Power BI to the prepared dataset
-   - Build interactive dashboards with KPIs and filters
-   - Present insights in a stakeholder-friendly format
-
-4. **Insight Generation**
-   - Translate analytical results into clear business observations
-   - Highlight revenue drivers and high-value customer segments
+Missing values were identified in the **review rating** field and handled during preprocessing :contentReference[oaicite:2]{index=2}.
 
 ---
 
-## 📊 Key KPIs & Metrics
-- Total Number of Customers  
-- Average Purchase Amount  
-- Average Review Rating  
-- Subscription Status Distribution  
-- Revenue by Product Category  
-- Sales by Product Category  
-- Revenue by Age Group  
-- Sales by Age Group  
+## 🔍 Analytics Workflow
+
+### 1️⃣ Data Preparation & EDA (Python)
+- Loaded raw dataset using pandas  
+- Inspected schema and summary statistics  
+- Handled missing review ratings using **category-level median imputation**  
+- Standardized column naming (snake_case)  
+- Engineered new features:
+  - `age_group` (binned customer ages)
+  - Purchase frequency indicators  
+- Validated data consistency and removed redundant fields  
+- Loaded cleaned data into PostgreSQL for SQL analysis :contentReference[oaicite:3]{index=3}
 
 ---
 
-**Insight:**  
-Young adult and middle-aged customer segments contribute the highest share of revenue and sales.
+### 2️⃣ Data Analysis (SQL)
+Business-driven SQL queries were written to answer key questions, including:
+
+- Revenue comparison by gender  
+- High-spending customers who used discounts  
+- Top-rated products by average review rating  
+- Shipping type comparison (Standard vs. Express)  
+- Subscribers vs. non-subscribers (customers, spend, revenue)  
+- Discount-dependent products  
+- Customer segmentation into **New, Returning, and Loyal** users  
+- Revenue contribution by age group  
+- Relationship between repeat buyers and subscription behavior :contentReference[oaicite:4]{index=4}
+
+---
+
+### 3️⃣ Visualization & Dashboarding (Power BI)
+An interactive Power BI dashboard was built to present insights clearly to stakeholders.  
+The dashboard includes:
+
+- KPI cards (Customers, Avg Purchase, Avg Rating)
+- Subscription status distribution
+- Revenue & sales by product category
+- Revenue & sales by age group
+- Dynamic filters for gender, category, subscription status, and shipping type
 
 ---
 
 ## 🧠 Key Business Insights
-- Subscription-based customers represent a smaller segment but show strong revenue impact
-- Product category performance varies significantly and influences overall business outcomes
-- Customer age segmentation reveals high-value demographic groups
-- Interactive filters enable deeper analysis by gender, category, subscription status, and shipping type
+- Subscribed customers represent a smaller segment but show strong revenue impact  
+- Discounts influence purchases but do not always reduce average spend  
+- Certain products are highly discount-dependent  
+- Loyal customers form the largest segment, highlighting the importance of retention  
+- Revenue contribution varies significantly by age group and shipping preference  
+
+---
+
+## 📈 Business Recommendations
+- **Increase Subscription Adoption** – Promote exclusive benefits for subscribers  
+- **Strengthen Loyalty Programs** – Incentivize repeat buyers to retain high-value customers  
+- **Optimize Discount Strategy** – Balance promotional impact with profit margins  
+- **Product Positioning** – Highlight top-rated and best-selling products  
+- **Targeted Marketing** – Focus campaigns on high-revenue age groups and express-shipping users :contentReference[oaicite:5]{index=5}
 
 ---
 
 ## 📁 Repository Structure
-
 customer-behavior-analysis/
 │
 ├── customer_behavior_dashboard.pbix
@@ -130,31 +155,23 @@ customer-behavior-analysis/
 
 ---
 
-## ▶️ How to Use This Project
+## ▶️ How to Use
 1. Clone or download the repository  
-2. Open `Customer_Shopping_Behavior_Analysis.ipynb` to review Python-based EDA  
-3. Review SQL queries in `customer_behavior_sql_queries.sql`  
+2. Review Python-based EDA in `Customer_Shopping_Behavior_Analysis.ipynb`  
+3. Explore business queries in `customer_behavior_sql_queries.sql`  
 4. Open `customer_behavior_dashboard.pbix` using **Power BI Desktop**  
-5. Use slicers and filters to explore customer insights interactively  
+5. Interact with slicers and visuals to explore insights  
 
 > **Note:**  
 > The dashboard is built using **Power BI Desktop**.  
-> Public publishing requires an **organizational Microsoft account**.
-
----
-
-## ✅ Why This Project Is Relevant
-This project reflects how data analysts work in real organizations by combining:
-- Business problem understanding
-- Data preparation and structured analysis
-- SQL-driven insights
-- Dashboard-based storytelling for stakeholders
-
-It is well-suited for **Data Analyst, Business Analyst, and Analytics Internship roles**.
+> Public publishing requires an organizational Microsoft account.
 
 ---
 
 ## 👤 Author
 **Dhruv**  
-Aspiring Data Analyst  
-Skills: Power BI · SQL · Python · Data Analysis
+Data Analyst  
+Skills: Python · SQL · Power BI · Data Analysis
+
+
+## 📁 Repository Structure
