@@ -27,7 +27,7 @@ The leadership team wants to leverage customer data to improve:
 ---
 
 ### 🔹 Subscription Status Analysis
-![Subscription Status](https://github.com/dhruvsingh33/customer-trends-data-analysis/blob/main/img/img2.png)
+<img src="https://github.com/dhruvsingh33/customer-trends-data-analysis/blob/main/img/img2.png" width="450">
 
 **Insight:**  
 Only a minority of customers are subscribed, indicating a strong opportunity to increase adoption through targeted incentives.
